@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=STIX+Two+Text:ital,wght@1,500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+
+.header {
+  width: 100%;
+  height: 90px;
+  line-height: 80px;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: whitesmoke;
+  box-shadow: 5px 2px 2px -5px;
+  position: fixed !important;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo h2 {
+  margin-bottom: auto;
+  color: rgb(93, 93, 93);
+  margin-top: auto;
+}
+
+.logo i {
+  color: rgb(218, 10, 10);
+  font-size: 2rem;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  list-style: none;
+  column-gap: 2.7rem;
+}
+
+.nav__item a {
+  color: rgb(58, 58, 58);
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-family: "Source Serif 4", serif;
+}
+
+.nav__item a:hover {
+  color: gray;
+}
+
+.custom__search {
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  height: 35px;
+  border-radius: 50px;
+  background: white;
+  box-shadow: 2px 2px 2px -2px;
+}
+
+.custom__search span i {
+  cursor: pointer;
+}
+
+.mobile__menu span i {
+  font-size: 1.3rem;
+}
+
+.mobile__menu {
+  display: none !important;
+  color: palevioletred;
+}
+
+.cart__icon {
+  position: relative;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(58, 58, 58);
+}
+
+.cart__badge {
+  position: absolute;
+  bottom: -10px;
+  right: 5px;
+  z-index: 1000;
+  color: gray;
+  font-size: 0.8rem;
+  font-weight: 500 !important;
+}
+
+.user a {
+  color: rgb(58, 58, 58) !important;
+  text-decoration: none;
+}
+
+.user i {
+  cursor: pointer;
+}
+
+.custom__search input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: black;
+}
+
+.custom__search input::placeholder {
+  color: black;
+}
+
+.custom__search input:focus::placeholder {
+  color: black;
+}
+
+.brand-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100px;
+  z-index: 999;
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__item:hover .brand-dropdown {
+  display: block;
+}
+
+/* Định dạng các mục trong menu dropdown */
+.brand-dropdown li {
+  padding: 8px 16px;
+  font-size: 1rem;
+  height: 30px;
+  line-height: 30px;
+}
+
+/* Định dạng liên kết trong menu dropdown */
+.brand-dropdown a {
+  text-decoration: none;
+  color: gray;
+  display: block;
+}
+
+.brand-dropdown li:hover {
+  color: black;
+  background-color: black;
+}
+
+/* CSS cho dropdown menu con "ADIDAS" */
+.sub-menu {
+  position: absolute;
+  top: 0;
+  left: 100%; /* Hiển thị dropdown bên phải của mục cha "ADIDAS" */
+  display: none;
+  background-color: #fff; /* Màu nền của dropdown menu */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 150px; /* Điều chỉnh chiều rộng của dropdown menu */
+  z-index: 999; /* Đảm bảo dropdown hiển thị trên các phần tử khác */
+}
+
+/* Hiển thị dropdown menu khi hover vào mục "ADIDAS" */
+.adidas:hover .sub-menu {
+  display: block;
+}
+
+/* Định dạng các mục trong dropdown menu */
+.sub-menu li {
+  padding: 8px 16px;
+  font-size: 1rem;
+}
+
+/* Định dạng liên kết trong dropdown menu */
+.sub-menu a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+/* Định dạng khi di chuột qua các mục trong dropdown menu */
+.sub-menu li:hover {
+  background-color: #f0f0f0;
+  color: gray;
+}
+
+/* CSS cho user-dropdown */
+/* CSS cho user-dropdown */
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.user-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-dropdown li {
+  padding: 10px;
+}
+
+.user-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+/* CSS cho biểu tượng người dùng */
+.user i {
+  margin-right: 5px;
+}
+
+/* CSS cho phần tử .user.logged-in khi hover */
+.user.logged-in:hover .user-dropdown {
+  display: block;
+}
+
+@media only screen and (max-width: 992px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: #0a071a7e;
+    display: none;
+  }
+  .nav__list__wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 100;
+    background: gray;
+    flex-direction: column;
+    box-shadow: 5px 5px 15px -5px pink;
+    justify-content: center !important;
+    padding: 0px 20px;
+  }
+  .nav__list {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav__item a {
+    font-size: 0.9rem;
+    color: black;
+    text-decoration: none;
+  }
+  .nav__item a:hover {
+    color: gray;
+  }
+  .header {
+    line-height: 40px;
+    padding: 10px 0px;
+  }
+  .custom__search {
+    border: 1px solid chocolate;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    height: 30px;
+    margin-top: 15px;
+  }
+  .mobile__menu {
+    display: block !important;
+    color: gray;
+  }
+  .logo h2 {
+    font-size: 1.5rem;
+  }
+  .active__menu {
+    display: block;
+  }
+}

@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=STIX+Two+Text:ital,wght@1,500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+
+.footer {
+  width: 100% !important;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  background-color: gray;
+}
+
+.footer__logo img {
+  width: 70%;
+  height: 100%;
+  margin-left: 0;
+  margin-top: 0px;
+}
+.row {
+  width: 100%;
+}
+
+.footer__logo p {
+  font-size: 1rem;
+  color: white;
+  line-height: 28px;
+}
+.crights {
+  text-align: center;
+}
+.delivery__time-item {
+  background: transparent !important  ;
+}
+.delivery__time-item p {
+  font-weight: 400;
+}
+.delivery__time-item span {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white;
+  font-family: "Source Serif 4", serif;
+}
+.footer__tittle {
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 600;
+  font-family: "Source Serif 4", serif;
+}
+.delivery__time-item p {
+  color: white;
+  font-family: "STIX Two Text", serif;
+  font-size: 1.1rem;
+}
+.delivery__time-item1 {
+  background: transparent !important;
+}
+.delivery__time-item1 p {
+  font-weight: 400;
+  color: white;
+  font-family: "Source Serif 4", serif;
+  font-size: 1.1rem;
+}
+
+.delivery__time-item2 {
+  background-color: transparent !important;
+  color: white;
+}
+.delivery__time-item2 a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-family: "Source Serif 4", serif;
+}
+.delivery__time-item2 a:hover {
+  color: black;
+}
+.newsletter input {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.footer__tittle p {
+  font-weight: 400;
+}
+
+.crights {
+  color: black;
+  font-weight: 400;
+  font-size: large;
+  font-family: "Source Serif 4", serif;
+}
+.social__links span i {
+  padding: 8px;
+  color: black;
+  border-radius: 60%;
+  background-color: white;
+}
+
+.social__links a {
+  text-decoration: none;
+  font-weight: 500;
+}
+.social__links p {
+  color: black;
+  font-weight: 400;
+  font-size: large;
+  margin-right: 100px;
+  font-family: "Source Serif 4", serif;
+}
+.facebook {
+  margin-right: 70px;
+  margin-left: -90px;
+  margin-top: -20px;
+}
+.instagram {
+  margin-right: 50px;
+  margin-left: -50px;
+  margin-top: -20px;
+}
+.youtube {
+  margin-right: 10px;
+  margin-left: -30px;
+  margin-top: -20px;
+}

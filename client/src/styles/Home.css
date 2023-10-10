@@ -1,0 +1,265 @@
+.custom-carousel {
+  width: 100%; /* Đặt chiều rộng của Carousel thành 100% */
+  height: auto;
+}
+
+.custom-carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Chiều cao tối đa của hình ảnh sẽ chiếm toàn bộ chiều cao của màn hình */
+}
+
+.custom-carousel-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-status {
+  display: none;
+}
+
+.row.justify-content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image__branch {
+  margin-top: 70px;
+  width: 100px;
+  margin-bottom: 120px;
+}
+.row {
+  margin-top: 50px;
+}
+.image-container {
+  position: relative;
+}
+
+.image {
+  width: 70%;
+  height: 120px;
+  transition: transform 0.3s; /* Thêm hiệu ứng transition */
+  margin: 35px;
+  padding: 0;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Màu nền trong suốt ban đầu */
+  opacity: 0; /* Ẩn hiệu ứng hover ban đầu */
+  transition: background-color 0.3s, opacity 0.3s, transform 0.3s; /* Thêm hiệu ứng transition */
+  transform-origin: center center;
+  transform: scale(1);
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.overlay-content p {
+  font-family: "Source Serif 4", serif;
+}
+.link-no-underline {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.image-container:hover .image {
+  transform: scale(1.05);
+}
+
+.image-container:hover .hover-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền khi hover */
+  opacity: 1; /* Hiển thị hiệu ứng hover */
+  transform: scale(1.05);
+}
+
+.image-container {
+  position: relative;
+}
+
+.image__hot {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: none; /* Ẩn hình ảnh thay thế ban đầu */
+}
+
+/* Khi di chuột vào .image-container, hiển thị .hover-image */
+.image-container:hover .hover-image {
+  display: block;
+}
+
+/* CSS tùy chỉnh cho phần "NỔI BẬT" */
+.hot_product {
+  color: black;
+  font-size: 2.5rem;
+  text-align: center;
+  display: flex; /* Sử dụng display: flex để căn giữa */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  margin-bottom: 20px;
+  font-family: "Source Serif 4", serif;
+}
+
+.image__hot {
+  margin-bottom: 40px;
+}
+.image-collection {
+  width: 100%;
+  height: 50%;
+}
+
+.hover-image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-details {
+  text-align: center;
+}
+.hover-details p {
+  font-weight: 600;
+}
+
+.why-noble {
+  margin-bottom: 30px;
+}
+.why-noble button {
+  background-color: gray;
+  font-weight: 600;
+  width: 150px;
+  height: 50px;
+  box-shadow: 0 4px 6px;
+  transition: transform 0.2s ease;
+  font-family: "Source Serif 4", serif;
+  font-size: 1.1rem;
+}
+.why__noble-title {
+  font-family: "Source Serif 4", serif;
+  font-size: 2.5rem;
+}
+
+.why-noble button:hover {
+  transform: scale(1.1);
+}
+.choose__us-title {
+  font-weight: 500;
+  font-size: 1.3rem;
+  font-family: "STIX Two Text", serif;
+}
+.choose__us-desc {
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-family: "Source Serif 4", serif;
+  color: rgb(89, 89, 89);
+  text-decoration: none; /* Mặc định không có đường gạch chân */
+  position: relative;
+  transition: all 0.3s ease;
+}
+.choose__us-desc::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Điều chỉnh vị trí của đường gạch chân */
+  width: 100%;
+  height: 2px; /* Độ dày của đường gạch chân */
+  background-color: gray; /* Màu của đường gạch chân */
+  transform: scaleX(0); /* Ban đầu đường gạch chân không có chiều ngang */
+  transform-origin: right; /* Điểm bắt đầu đường gạch chân từ bên phải */
+  transition: transform 0.3s ease; /* Áp dụng hiệu ứng chuyển động */
+}
+
+.choose__us-desc:hover::after {
+  transform: scaleX(1); /* Khi di chuột vào, hiển thị đường gạch chân */
+}
+.image__1 {
+  width: 70%;
+  height: 100%;
+}
+.image__2 {
+  width: 70%;
+  height: 100%;
+}
+.image__3 {
+  width: 70%;
+  height: 100%;
+}
+.image__about {
+  margin-bottom: 70px;
+  text-align: center !important;
+}
+.button__hot {
+  position: relative;
+  display: inline-block;
+  background-color: gray;
+  font-weight: 600;
+  width: 150px;
+  height: 50px;
+  box-shadow: 0 4px 6px;
+  font-family: "Source Serif 4", serif;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 50px;
+  overflow: hidden; /* Ẩn phần dư thừa nếu có */
+  white-space: nowrap; /* Ngăn văn bản bị xuống dòng */
+  transition: transform 0.2s ease;
+}
+
+.button__hot:hover {
+  transform: translateX(20px);
+  cursor: pointer;
+}
+
+.image-about {
+  margin-bottom: 30px;
+}
+.hot-text {
+  font-family: "Source Serif 4", serif;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.image-about {
+  position: relative;
+  overflow: hidden;
+}
+
+.image__1,
+.image__2,
+.image__3 {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* Áp dụng hiệu ứng chuyển động */
+}
+
+.image-about:hover .image__1 {
+  transform: rotate(10deg);
+}
+
+.image-about:hover .image__2 {
+  transform: rotate(10deg);
+}
+
+.image-about:hover .image__3 {
+  transform: rotate(10deg);
+}
