@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/login.css";
-import fakeUsers from "../assets/fake-data/account";
-import { Profile } from "../lib/curent-profile";
+//import fakeUsers from "../assets/fake-data/account";
+//import { Profile } from "../lib/curent-profile";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../redux/apiRequest";
 //import { Container } from "reactstrap";

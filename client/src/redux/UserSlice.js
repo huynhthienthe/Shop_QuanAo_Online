@@ -1,14 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// các chức năng liên quan tới user
+// danh sách user
+// thêm xóa user
+// chỉnh sửa user
+//...
+
 const userSlice = createSlice({
-    name:"user",
+    name:"Users",
     initialState:{
         users: {
             allUsers:null,
             isFetching:false,
             error:false
         },
-        msg:"",
+        
     },
     reducers:{
         getUsersStart: (state)=>{
@@ -22,28 +28,28 @@ const userSlice = createSlice({
             state.users.isFetching = false;
             state.users.error = true;
         },
-        deleteUserStart: (state)=>{
-            state.users.isFetching = true;
-        },
-        deleteUsersSuccess: (state,action)=>{
-            state.users.isFetching = false;
-            state.msg = action.payload;
-        },
-        deleteUserFailed: (state,action)=>{
-            state.users.isFetching = false;
-            state.users.error = true;
-            state.msg = action.payload;
-        } 
-    }
-})
+        // deleteUserStart: (state)=>{
+        //     state.users.isFetching = true;
+        // },
+        // deleteUsersSuccess: (state,action)=>{
+        //     state.users.isFetching = false;
+        //     state.msg = action.payload;
+        // },
+        // deleteUserFailed: (state,action)=>{
+        //     state.users.isFetching = false;
+        //     state.users.error = true;
+        //     state.msg = action.payload;
+        // } 
+    },
+});
 
 export const {
     getUsersStart,
     getUsersSuccess,
     getUsersFailed,
-    deleteUserStart,
-    deleteUsersSuccess,
-    deleteUserFailed
+    // deleteUserStart,
+    // deleteUsersSuccess,
+    // deleteUserFailed
 } = userSlice.actions;
 
 export default userSlice.reducer;

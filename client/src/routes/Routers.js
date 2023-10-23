@@ -16,6 +16,8 @@ import Register from "../pages/Register";
 // import Lienhe from "../pages/Lienhe";
 // import Gioithieu from "../pages/Gioithieu";
 
+import GetAllUser from "../pages/QL_KhachHang";
+
 const Routers = () => {
   return (
     <Routes>
@@ -23,6 +25,8 @@ const Routers = () => {
       <Route path="/home" element={<Home />} />
       <Route path="/Home/register" element={<Register />} />
       <Route path="/Home/login" element={<Login />} />
+      <Route path="/User/GetAllUser" element={<GetAllUser />} /> 
+      <Route path="/User/CT_NguoiDung_Action" element={<GetAllUser />} /> 
     </Routes>
   );
 };

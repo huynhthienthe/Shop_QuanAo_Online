@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState} from "react";
 import { Container } from "reactstrap";
+import { useDispatch,useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 import "../../styles/header.css";
 import { Profile } from "../../lib/curent-profile";
+
+import { logOut,getAllUser } from "../../redux/apiRequest";
 
 const navLinks = [
   {
@@ -35,14 +38,13 @@ const Header = () => {
   const [isBrandDropdownOpen, setIsBrandDropdownOpen] = useState(false);
   const [showUserDropdown, setShowUserDropdown] = useState(false);
 
-  const [loggedInUsername, setLoggedInUsername] = useState("");
-  useEffect(() => {
-    const tenDangNhap = localStorage.getItem("tenDangNhap");
-    if (tenDangNhap) {
-      setLoggedInUsername(tenDangNhap);
-    }
-  }, []);
-  const navigate = useNavigate(); // Sử dụng hook useNavigate
+  //
+  const user = useSelector((state)=> state.user_status.login.currentUser);
+
+
+  //
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const toggleBrandDropdown = () => {
     setIsBrandDropdownOpen(!isBrandDropdownOpen);
@@ -54,12 +56,10 @@ const Header = () => {
     }
   };
 
-  const handleLogout = () => {
-    setShowUserDropdown(false);
-    navigate("Home/login");
-    Profile.loggedIn = false;
-    localStorage.removeItem("userLoggedIn");
-  };
+  // const handleLogout = () => {
+  //   logOut(dispatch,navigate);
+  //   //setLoggedInUsername("");
+  // };
 
   return (
     <header className="header">
@@ -75,12 +75,19 @@ const Header = () => {
             onMouseEnter={toggleBrandDropdown}
             onMouseLeave={toggleBrandDropdown}
           >
+
+
+<a href="/User/GetAllUser">Listuser</a>
+
             <ul className="nav__list">
               {navLinks.map((item, index) => (
                 <li className="nav__item" key={index}>
                   <a href={item.url} onClick={toggleBrandDropdown}>
                     {item.display}
                   </a>
+
+
+
                   {item.display === "Thương Hiệu" && isBrandDropdownOpen && (
                     <ul className="brand-dropdown">
                       <li className="adidas">
@@ -100,6 +107,25 @@ const Header = () => {
                           </li>
                         </ul>
                       </li>
+
+                      <li className="adidas">
+                  
+                        <ul className="sub-menu">
+                          <li>
+                            <a href="#">Tất Cả</a>
+                          </li>
+                          <li>
+                            <a href="#">Áo</a>
+                          </li>
+                          <li>
+                            <a href="#">Quần</a>
+                          </li>
+                          <li>
+                            <a href="#">Dép</a>
+                          </li>
+                        </ul>
+                      </li>
+
                       <li className="nike">
                         <a href="#">NIKE</a>
                       </li>
@@ -131,23 +157,23 @@ const Header = () => {
             </div>
 
             <div
-        className={`user ${loggedInUsername ? "logged-in" : "not-logged-in"}`}
+        className = {`user ${user ? "logged-in" : "not-logged-in"}`}
         onMouseEnter={toggleUserDropdown}
         onMouseLeave={toggleUserDropdown}
       >
-        {!loggedInUsername ? (
+        {!user ? (
           <Link to="Home/login">
             <i className="ri-user-3-line"></i>
           </Link>
         ) : (
-          <span>{loggedInUsername}</span>
+          <span>{user.TenDangNhap}</span>
         )}
 
-        {loggedInUsername && (
+        {user && (
           <div className="user-dropdown">
             <ul>
               <li>
-                <Link to="/caidat">Cài đặt tài khoản</Link>
+                <Link to="">Cài đặt tài khoản</Link>
               </li>
               <li>
                 <Link to="/yeuthich">Sản phẩm yêu thích</Link>
@@ -155,7 +181,7 @@ const Header = () => {
               <li>
                 <Link to="/lichsu">Lịch sử đã mua</Link>
               </li>
-              <li onClick={handleLogout}>Đăng xuất</li>
+              {/* <li onClick={handleLogout}>Đăng xuất</li> */}
             </ul>
           </div>
         )}
