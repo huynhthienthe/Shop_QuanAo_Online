@@ -1,80 +1,114 @@
-/* CSS cho container chứa form đăng ký */
-.register-container {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: left;
-    line-height: 30px;
-    box-shadow: 5px 5px 5px -5px;
-    background-color: grey !important;
-    position: relative;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap"); /* CSS cho container chứa form đăng ký */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap");
+.register-container2 {
+  width: auto;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 100px;
+  height: auto; /* Đặt chiều cao tự động để thích ứng với nội dung */
+  position: relative;
 }
-  
-  
-  /* CSS cho tiêu đề h2 */
-.register-container h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: black;
-  }
-  
-  /* CSS cho form-group */
-.form-group {
-    margin-bottom: 15px;
-  }
-  
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: black;
-  }
-  
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  /* CSS cho button */
-button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin: 0 auto; /* Cân chỉnh nút theo chiều ngang */
-    display: block; /* Để nút tự động căn giữa */
-  }
-  
-button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  body {
-    display: contents;
-    /* justify-content: center; */
-    align-items: center;
-    min-height: 100vh;
-  }
-  .message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 1rem;
-    z-index: 999; /* Để thông báo hiển thị phía trên cùng */
-    font-weight: 1.2rem;
-  }
-  
+
+/* CSS cho tiêu đề h2 */
+.register-container2 h2 {
+  font-size: 1.7rem;
+  text-align: center;
+  color: gray;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 70px; /* Loại bỏ khoảng cách trên đầu tiêu đề */
+  margin-bottom: 50px;
+}
+
+/* CSS cho hàng */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* CSS cho cột trong hàng */
+.form-column2 {
+  flex-basis: 50%; /* Sử dụng 50% chiều rộng cho mỗi cột */
+  margin: 0 auto; /* Để căn chỉnh chúng giữa theo chiều ngang */
+  max-width: 500px; /* Để giới hạn chiều rộng tối đa của mỗi cột */
+  margin-bottom: 15px; /* Thêm margin-bottom để tạo khoảng cách dọc giữa các cột */
+}
+
+/* CSS cho nhóm input */
+.form-group2 {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* CSS cho label */
+.form-group2 label2 {
+  margin-bottom: 5px;
+}
+
+/* CSS cho icon trước input */
+.form-group2 i {
+  position: absolute;
+  left: 10px; /* Đặt khoảng cách bên trái */
+  top: 50%; /* Đặt vào giữa theo chiều cao */
+  transform: translateY(-50%); /* Để căn giữa theo chiều dọc */
+  z-index: 2;
+  font-size: 1.4rem;
+  color: black; /* Màu của biểu tượng */
+}
+
+/* CSS cho input */
+.form-group2 input {
+  min-width: 200px;
+  width: 100%;
+  padding: 10px 10px 10px 40px; /* Để tạo khoảng cách bên trái cho biểu tượng */
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box; /* Để padding không tạo ra lỗi chiều rộng */
+  margin-bottom: 10px;
+}
+.form-group2 input:focus + i {
+  opacity: 0;
+}
+/* CSS cho thông báo lỗi */
+.error-message2 {
+  position: absolute;
+  left: 0;
+  color: red;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 50px;
+}
+
+/* CSS cho nút Đăng ký */
+.form-group3 {
+  text-align: center;
+  font-size: 1rem;
+  z-index: 999;
+}
+
+/* CSS cho nút Đăng ký (button) */
+.form-group3 button {
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  margin-top: -30px;
+  background-color: black;
+  margin-bottom: 115px;
+}
+
+.form-group3 button:hover {
+  background-color: gray;
+}
+/* CSS cho cột nút Đăng ký */
+.form-group3 {
+  flex-basis: 100%; /* Sử dụng toàn bộ chiều rộng của hàng */
+}

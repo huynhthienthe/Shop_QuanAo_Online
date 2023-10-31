@@ -1,214 +1,133 @@
 import React, { useState } from "react";
+import { useDispatch }     from "react-redux";
+import { useNavigate }     from "react-router-dom";
+import { registerUser }    from "../redux/apiRequest";
 import "../styles/register.css";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { registerUser } from "../redux/apiRequest";
-//import fakeUsers from "../assets/fake-data/account";
 
-// gacon start
 const Register = () => {
+  const [getTenDangNhap, setTenDangNhap]   = useState("");
+  const [getMatKhau,     setMatKhau]       = useState("");
+  const [getSDT,         setSDT]           = useState("");
+  const [getHo_TenDem,   setHo_TenDem]     = useState("");
+  const [getTen_ND,      setTen_ND]        = useState("");
+  const [getEmail,       setEmail]         = useState("");
+  const [usernameError, setUsernameError]  = useState("");
 
-  const [getTenDangNhap, setTenDangNhap] = useState("");
-  const [getMatKhau,     setMatKhau]     = useState("");
-  const [getTuoi,        setTuoi]        = useState("");
-  const [getSDT,         setSDT]         = useState("");
-  const [getHo_TenDem,   setHo_TenDem]   = useState("");
-  const [getTen_ND,      setTen_ND]      = useState("");
-  const [getEmail,       setEmail]       = useState("");
-  const [getGioiTinh,    setGioiTinh]    = useState("");
-  //const [ChucVu,      setChucVu]      = userState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
-  const handleRegister= (e)=>{
-    // fix: reload_page
+
+  const handleRegister = (e) => {
     e.preventDefault();
-    const newUser = {
-    TenDangNhap: getTenDangNhap,
-    MatKhau:     getMatKhau,
-    Tuoi:        getTuoi,
-    SDT:         getSDT,
-    Ho_TenDem:   getHo_TenDem,
-    Ten_ND:      getTen_ND,
-    Email:       getEmail,
-    GioiTinh:    getGioiTinh,
-  };
-  // call api
-  console.log(">>> user đăng ký: ", newUser);
-  registerUser(newUser,dispatch,navigate);
-
-  //  todo code của kim phụng: //
-
-  // const [message, setMessage] = useState(null);
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData({
-  //     ...formData,
-  //     [name]: value,
-  //   });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  
-  //   // Kiểm tra xem formData có trùng với bất kỳ người dùng nào trong danh sách fakeUsers không
-  //   const isRegistered = fakeUsers.some((user) => {
-  //     return (
-  //       user.email === formData.email && user.password === formData.password
-  //     );
-  //   });
-  
-  //   if (isRegistered) {
-  //     setMessage("Đăng ký thành công !");
-  //   } else {
-  //     setMessage("Đăng ký thất bại. Kiểm tra lại thông tin đăng ký.");
-  //   }
-  // };
-}
+    if (getTenDangNhap.length < 6 || getTenDangNhap.length > 10) {
+      setUsernameError("Tên đăng nhập phải có từ 6 đến 10 ký tự.");
+    } else {
+      setUsernameError("");
+      const newUser = {
+        TenDangNhap: getTenDangNhap,
+        MatKhau: getMatKhau,
+        SDT: getSDT,
+        Ho_TenDem: getHo_TenDem,
+        Ten_ND: getTen_ND,
+        Email: getEmail,
+      };
+      console.log(">>> user đăng ký: ", newUser);
+      registerUser(newUser, dispatch, navigate);
+  }};
 
   return (
-    <div className="register-container">
+    <div className="register-container2">
       <h2>ĐĂNG KÝ</h2>
-      <form onSubmit={handleRegister}>
+      <form onSubmit={handleRegister} className="form-container2">
+        {/* Hàng 2: Input */}
+        <div className="form-row">
+          <div className="form-column2">
+            <div className="form-group2">
+              <label2 htmlFor="username">
+                <i class="ri-user-3-fill"></i>
+              </label2>
+              <input
+                type="text"
+                placeholder="Tên đăng nhập"
+                onChange={(e) => setTenDangNhap(e.target.value)}
+                required
+              />
+              {usernameError && (
+                <div className="error-message2">{usernameError}</div>
+              )}
+            </div>
 
+            <div className="form-group2">
+              <label2 htmlFor="password">
+                <i class="ri-lock-fill"></i>
+              </label2>
+              <input
+                type="password"
+                placeholder="Mật khẩu"
+                onChange={(e) => setMatKhau(e.target.value)}
+                required
+              />
+            </div>
 
-         <div className="form-group">
-          <label htmlFor="firstName">Tên Đăng Nhập: </label>
-          <input
-            type="text"
-            placeholder="Tên Đăng Nhập của bạn !"
-            //id="firstName"
-            //name="firstName"
-            //value={formData.TenDangNhap}
-            onChange={(e)=>setTenDangNhap(e.target.value)}
-            required
-          />
-        </div>
-       
+            <div className="form-group2">
+              <label2 htmlFor="sdt">
+                <i class="ri-phone-fill"></i>
+              </label2>
+              <input
+                type="number"
+                placeholder="Số điện thoại"
+                onChange={(e) => setSDT(e.target.value)}
+                required
+              />
+            </div>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="firstName">Mật Khẩu: </label>
-          <input
-            type="password"
-            placeholder="Mật Khẩu của bạn !"
-            //id="firstName"
-            //name="firstName"
-            // value={formData.MatKhau}
-            onChange={(e)=>setMatKhau(e.target.value)}
-            required
-          />
-        </div>
+          <div className="form-column2">
+            <div className="form-group2">
+              <label2 htmlFor="hoten">
+                <i class="ri-user-3-fill"></i>
+              </label2>
+              <input
+                type="text"
+                placeholder="Họ"
+                onChange={(e) => setHo_TenDem(e.target.value)}
+                required
+              />
+            </div>
 
+            <div className="form-group2">
+              <label2 htmlFor="firstName">
+                <i class="ri-user-3-fill"></i>
+              </label2>
+              <input
+                type="text"
+                placeholder="Tên"
+                onChange={(e) => setTen_ND(e.target.value)}
+                required
+              />
+            </div>
 
-        <div className="form-group">
-          <label htmlFor="firstName">Tuổi: </label>
-          <input
-            type="number"
-            placeholder="Tuổi của bạn !"
-            //id="firstName"
-            //name="firstName"
-            //value={formData.Tuoi}
-            onChange={(e)=>setTuoi(e.target.value)}
-            required
-          />
-        </div>
-        
-
-        <div className="form-group">
-          <label htmlFor="firstName">SĐT: </label>
-          <input
-            type="number"
-            placeholder="Số Điện Thoại của bạn !"
-            //id="firstName"
-            //name="firstName"
-            //value={formData.SDT}
-            onChange={(e)=>setSDT(e.target.value)}
-            required
-          />
-        </div>
-
-
-        <div className="form-group">
-          <label htmlFor="firstName">Họ & Tên Đệm: </label>
-          <input
-            type="text"
-            placeholder="Họ và Tên Đệm của bạn !"
-            //id="firstName"
-            //name="firstName"
-            //value={formData.Ho_TenDem}
-            onChange={(e)=>setHo_TenDem(e.target.value)}
-            required
-          />
-        </div>
-
-
-        <div className="form-group">
-          <label htmlFor="firstName">Tên: </label>
-          <input
-            type="text"
-            placeholder="Tên của bạn !"
-            //id="firstName"
-            //name="firstName"
-            //value={formData.Ten_ND}
-            onChange={(e)=>setTen_ND(e.target.value)}
-            required
-          />
-        </div>
-        
-
-        <div className="form-group">
-          <label htmlFor="firstName">Email: </label>
-          <input
-            type="email"
-            placeholder="Gmail của bạn !"
-            //id="firstName"
-            //name="firstName"
-            //value={formData.Email}
-            onChange={(e)=>setEmail(e.target.value)}
-            required
-          />
+            <div className="form-group2">
+              <label2 htmlFor="firstName">
+                <i class="ri-mail-fill"></i>
+              </label2>
+              <input
+                type="email"
+                placeholder="Gmail"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+          </div>
         </div>
 
-
-        <div className="form-group">
-          <label htmlFor="firstName">Giới Tính: </label>
-          <input
-            type="text"
-            placeholder="Giới Tính của bạn !"
-            //id="firstName"
-            //name="firstName"
-            //value={formData.GioiTinh}
-            onChange={(e)=>setGioiTinh(e.target.value)}
-            required
-          />
+        {/* Hàng 3: Nút Đăng ký */}
+        <div className="form-row">
+          <div className="form-group3">
+            <button type="submit">ĐĂNG KÝ</button>
+          </div>
         </div>
-        
-
-        {/* <div className="form-group">
-          <label htmlFor="firstName">Chức Vụ: </label>
-          <input
-            type="text"
-            placeholder="Tên của bạn !"
-            //id="firstName"
-            //name="firstName"
-            //value={formData.firstName}
-            onChange={(e)=>setChucVu(e.target.value)}
-            required
-          />
-        </div> */}
-        
-        <button type="submit">ĐĂNG KÝ</button>
       </form>
-
-      {/* Hiển thị thông báo chính giữa màn hình */}
-      {/* {message && <div className="message">{message}</div>} */}
     </div>
   );
 };
 export default Register;
-//  gacon end
-
-
-
-

@@ -1,7 +1,6 @@
 import { UserModel } from "../models/UserModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt';
-import { Model } from "mongoose";
 
 // JWT: store
 let refreshTokens = [];
@@ -15,9 +14,9 @@ const generateAccessToken = (user) => {
         Admin: user.Admin,
       },
       process.env.access_key,
-      { expiresIn: "40s" }
+      { expiresIn: "1d" }
     );
-  };
+};
 
 const generateRefreshToken = (user) => {
     return jwt.sign(
@@ -29,7 +28,7 @@ const generateRefreshToken = (user) => {
       process.env.refresh_key,
       { expiresIn: "30d" }
     );
-  };
+};
 
 // Đăng Ký - xong
 export const DangKyAction = async (req, res) =>{
@@ -60,9 +59,9 @@ export const DangKyAction = async (req, res) =>{
     catch(err){
         return res.status(500).json(err);
     }
-  };
+};
 
-// Đăng Nhập - đang fix
+// Đăng Nhập - đang xong
 export const DangNhapAction = async (req,res) =>{
     // jwt:
     try{
@@ -110,19 +109,30 @@ export const DangNhapAction = async (req,res) =>{
     } catch(err){
         return res.status(500).json(err);
     }
-  };
+};
+
+// // Đăng Xuất - bản cũ
+// export const DangXuatAction = async (req, res) => {
+//   // xóa cookie
+//     res.clearCookie("refreshToken");
+//     refreshTokens = refreshTokens.filter(
+//       (token) => token !== req.cookies.refreshToken
+//     );
+//     res.status(200).json("Chào tạm biệt ! ");
+//   };
+console.log("");
 
 // Đăng Xuất - đang fix
 export const DangXuatAction = async (req, res) => {
   // xóa cookie
     res.clearCookie("refreshToken");
-    refreshTokens = refreshTokens.filter(
-      (token) => token !== req.cookies.refreshToken
-    );
+    // refreshTokens = refreshTokens.filter(
+    //   (token) => token !== req.cookies.refreshToken
+    // );
     res.status(200).json("Chào tạm biệt ! ");
-  };
+};
 
-//
+// requestRefreshToken - đang làm
 export const requestRefreshToken = async (req, res) => {
     //Take refresh token from user
     const refreshToken = req.cookies.refreshToken;
@@ -153,27 +163,5 @@ export const requestRefreshToken = async (req, res) => {
         refreshToken: newRefreshToken,
       });
     });
-  };
-
-//   // action.js - đang fix
-// export const saveAccessToken = (accessToken) => {
-//   return {
-//     type: 'SAVE_ACCESS_TOKEN',
-//     payload: accessToken,
-//   };
-// };
-
-
-//-------------------- test router --------------------//
-export const createPost = (req,res) =>{
-    res.send('Router: Create posts đã kết nối')
 };
-// home 
-export const Get_HomeCotronller = (req, res) =>{
-    res.send('Router: Đây là Home Page');
-};
-//login
-export const Get_LoginCotronller = (req, res) =>{
-    res.send('Router: Đây là Login Page');
-};
-//-------------------- test router --------------------//
+

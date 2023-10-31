@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=STIX+Two+Text:ital,wght@1,500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@500&family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&family=Work+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@500&family=Mukta:wght@500&family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&family=Work+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Lato:wght@700&family=Montserrat:wght@500&family=Mukta:wght@500&family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&family=Work+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=PT+Sans:wght@700&display=swap");
+.cart__item-image {
+  width: 100px;
+  height: 200px;
+  object-fit: cover;
+  margin-top: 30px;
+}
+
+.cart__product-info {
+  line-height: 50px;
+  margin-top: 30px;
+}
+.cart__product-info h6 {
+  margin-top: 5px;
+  font-family: "PT Sans", sans-serif;
+}
+.cart__product-info p {
+  margin-bottom: -2px;
+  font-family: "Times New Roman", Times, serif !important;
+  color: gray;
+}
+.price__infor {
+  margin-bottom: -2px;
+  font-family: "Lato", sans-serif !important;
+  font-size: 1rem;
+}
+.increase__decrease-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.increase__btn {
+  cursor: pointer;
+  font-size: 1rem; /* Tăng kích thước */
+  padding: 3px 8px; /* Tăng padding */
+  color: white;
+  background-color: black;
+  margin-right: 5px; /* Khoảng cách về bên phải */
+}
+
+.decrease__btn {
+  cursor: pointer;
+  font-size: 1rem; /* Tăng kích thước */
+  padding: 3px 8px; /* Tăng padding */
+  color: white;
+  background-color: black;
+  margin-left: 10px; /* Khoảng cách về bên trái */
+}
+
+.delete__btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cart__item {
+  margin-bottom: 5px;
+  border-bottom: 1px solid #fde4e4;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 576px) {
+  .cart__item-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .delete__btn {
+    font-size: 1rem;
+  }
+}

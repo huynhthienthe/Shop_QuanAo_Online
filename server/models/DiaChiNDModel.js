@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 //
 const DiaChiND_Schema = new mongoose.Schema({
-    // id_DiaChi:{
-    //     type: Number,
-    //     require: true,
-    //     unique: true
-    // }, 
     TenDiaChi:{
         type: String,
         require: true,

@@ -22,17 +22,13 @@
   justify-content: space-between;
 }
 
-.logo h2 {
-  margin-bottom: auto;
-  color: rgb(93, 93, 93);
-  margin-top: auto;
+.logo img {
+  width: 70px;
+  margin-left: 100px;
 }
-
-.logo i {
-  color: rgb(218, 10, 10);
-  font-size: 2rem;
+.nav__menu {
+  margin-right: 100px;
 }
-
 .nav__list {
   display: flex;
   align-items: center;
@@ -59,7 +55,7 @@
   display: flex;
   align-items: center;
   padding: 10px 25px;
-  height: 35px;
+  height: 45px;
   border-radius: 50px;
   background: white;
   box-shadow: 2px 2px 2px -2px;
@@ -96,7 +92,7 @@
   bottom: -10px;
   right: 5px;
   z-index: 1000;
-  color: gray;
+  color: red;
   font-size: 0.8rem;
   font-weight: 500 !important;
 }

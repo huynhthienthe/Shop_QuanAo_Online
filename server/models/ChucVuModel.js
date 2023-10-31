@@ -10,4 +10,4 @@ const ChucVu_Schema = new mongoose.Schema({
     { timestamps: true }
 );
 
-export const UserModel = mongoose.model('ChuVu', ChucVu_Schema);
+export const ChucVuModel = mongoose.model('ChucVu', ChucVu_Schema);

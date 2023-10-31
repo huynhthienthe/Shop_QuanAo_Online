@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import logoshop from "../../assets/images/2.png";
+import noble from "../../assets/images/noble.png";
 
 import "../../styles/footer.css";
 import { Link } from "react-router-dom";
@@ -11,7 +12,7 @@ const Footer = () => {
         <Row>
           <Col lg="3" md="4" sm="6">
             <div className="logo footer__logo text-start">
-              <img src={logoshop} alt="logo" />
+              <img src={noble} alt="logo" />
             </div>
           </Col>
 

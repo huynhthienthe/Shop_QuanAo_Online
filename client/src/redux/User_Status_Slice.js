@@ -4,6 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 // đăng nhập
 // đăng ký
 // đăng xuất
+// chi tiết
+// chỉnh sửa
 
 
 const User_Status_Slice = createSlice({
@@ -57,24 +59,21 @@ const User_Status_Slice = createSlice({
             state.register.error = true;
             state.register.success = false;
         },
-        // // đăng xuất:
-        // logOutSuccess: (state) => {
-        //     //...
-        //     state.login.isFetching = false;
-        //     state.login.currentUser = null;
-        //     state.login.error = false;
-        // },
-        // logOutFailed: (state) =>{
-        //     //...
-        //     state.login.isFetching = false;
-        //     state.login.error = true;
-        // },
-        // logOutStart: (state) =>{
-        //     //...
-        //     state.login.isFetching = true;
-        // },
+        logOutStart: (state) =>{
+            //...
+            state.login.isFetching = true;
+        },
+        logOutSuccess: (state) => {
+            //...
+            state.login.isFetching = false;
+            state.login.currentUser = null;
+        },
+        logOutFailed: (state) =>{
+            //...
+            state.login.isFetching = false;
+            state.login.error = true;
+        },
 
-     
     },
 });
 
@@ -85,9 +84,9 @@ export const {
     registerStart,
     registerSuccess,
     registerFailed,
-    // logOutStart,
-    // logOutSuccess,
-    // logOutFailed,
+    logOutStart,
+    logOutSuccess,
+    logOutFailed,
 } = User_Status_Slice.actions;
 
 export default User_Status_Slice.reducer;

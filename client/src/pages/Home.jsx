@@ -1,32 +1,36 @@
-import React, { useState } from "react";
-import Helmet from "../components/Helmet/Helmet";
-import { Carousel } from "react-responsive-carousel";
+import React, { useState }  from "react";
+import Helmet               from "../components/Helmet/Helmet";
+import { Link }             from "react-router-dom";
+import { Carousel }         from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import banner_01 from "../assets/images/banner_01.png";
 import banner_02 from "../assets/images/banner_02.png";
 import banner_03 from "../assets/images/banner_03.png";
-import gucci from "../assets/images/gucci.jpg";
-import mlb from "../assets/images/mlb.jpg";
-import nike from "../assets/images/nike.jpeg";
+
+import gucci  from "../assets/images/gucci.jpg";
+import mlb    from "../assets/images/mlb.jpg";
+import nike   from "../assets/images/nike.jpeg";
 import adidas from "../assets/images/adidas.jpg";
-import product__01 from "../assets/images/product__01.jpg";
-import product__02 from "../assets/images/product__02.jpg";
-import product__03 from "../assets/images/product__03.jpg";
-import product__04 from "../assets/images/product__04.jpg";
+
+import image1 from "../assets/images/image1.png";
+import image2 from "../assets/images/image2.png";
+import image3 from "../assets/images/image3.png";
+
+import new__image   from "../assets/images/new__image.png";
+import product__01  from "../assets/images/product__01.jpg";
+import product__02  from "../assets/images/product__02.jpg";
+import product__03  from "../assets/images/product__03.jpg";
+import product__04  from "../assets/images/product__04.jpg";
 import product__012 from "../assets/images/product__012.jpg";
 import product__022 from "../assets/images/product__022.jpg";
 import product__032 from "../assets/images/product__032.jpg";
 import product__042 from "../assets/images/product__042.jpg";
-import image1 from "../assets/images/image1.png";
-import image2 from "../assets/images/image2.png";
-import image3 from "../assets/images/image3.png";
-import new__image from "../assets/images/new__image.png";
-import "../styles/Home.css";
+
 import { Col, Container, Row, ListGroup, ListGroupItem } from "reactstrap";
-import { Link } from "react-router-dom";
+import "../styles/Home.css";
 
 const Home = () => {
-  
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handleMouseEnter = (index) => {
@@ -39,6 +43,7 @@ const Home = () => {
 
   return (
     <Helmet title="Trang chủ">
+
       <section>
         <Carousel
           autoPlay={true}
@@ -46,8 +51,8 @@ const Home = () => {
           showThumbs={false}
           interval={1500}
           infiniteLoop={true}
-          className="custom-carousel"
-        >
+          className="custom-carousel">
+            
           <div>
             <img src={banner_01} alt="banner1" />
           </div>
@@ -59,8 +64,10 @@ const Home = () => {
           </div>
         </Carousel>
       </section>
+
       <Container className="image__branch">
         <Row>
+
           <Col lg="3" md="4" sm="6" className="text-center">
             <div className="image-container">
               <img src={adidas} alt="adidas" className="image" />
@@ -112,9 +119,12 @@ const Home = () => {
               </div>
             </div>
           </Col>
+
         </Row>
       </Container>
+
       <Container>
+
         <Row className="why-noble">
           <Col lg="6" md="6">
             <div className="why__noble">
@@ -176,8 +186,9 @@ const Home = () => {
           </Col>
 
           <Col lg="6" md="6">
-            <img src={new__image} alt="newimage" className="w-100" />
+            <img src={new__image} alt="newimage" className="img-noibat w-100" />
           </Col>
+          
         </Row>
       </Container>
       <Container className="image__hot">

@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=STIX+Two+Text:ital,wght@1,500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@500&family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&family=Work+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@500&family=Mukta:wght@500&family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&family=Work+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Lato:wght@700&family=Montserrat:wght@500&family=Mukta:wght@500&family=Noto+Serif+Display:wght@300;400;700&family=Playfair:ital,opsz,wght@1,5..1200,600&family=STIX+Two+Text:ital,wght@1,500;1,600&family=Source+Serif+4:opsz,wght@8..60,600&family=Work+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=PT+Sans:wght@700&display=swap");
+.banner__adidas {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.image__adidas {
+  width: 100%;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 45%;
+  left: 40%; /* Điều chỉnh vị trí ngang của văn bản trên ảnh */
+  font-size: 4rem;
+  color: black;
+  font-family: "Source Serif 4", serif;
+}
+.product-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.product-item {
+  flex: 0 0 calc(25% - 10px);
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+.product-item h3 {
+  font-size: 1rem;
+  margin-top: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+}
+.product-item p {
+  font-family: "Mukta", sans-serif;
+  font-size: 1.1rem;
+}
+.product-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.product-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: gray;
+  z-index: 1;
+  cursor: pointer;
+}
+/*cac thanh */
+.thanhinput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-family: "AR One Sans", sans-serif;
+  margin-bottom: -30px;
+}
+
+.sort-dropdown,
+.adidas-search-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.sort-dropdown {
+  justify-content: flex-start; /* Thanh sắp xếp nằm bên trái */
+}
+
+.sort-dropdown select {
+  width: 300px;
+  height: 30px;
+  font-size: 0.9rem;
+}
+
+.adidas-search-bar {
+  justify-content: flex-end; /* Thanh tìm kiếm nằm bên phải */
+}
+
+.adidas-search-bar input {
+  height: 30px;
+  width: 300px;
+  font-size: 0.9rem;
+}
+
+/* Kiểu hover và focus cho input và select (tuỳ chỉnh theo nhu cầu) */
+select:focus {
+  border: 2px solid gray;
+}
+
+select:hover {
+  border: 2px solid #666; /* Màu viền khi hover */
+}
