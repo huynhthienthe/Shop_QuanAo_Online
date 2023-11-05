@@ -10,6 +10,8 @@ import dotenv from 'dotenv';
 import HomeRouter from './routers/Home.js';
 import userRouter from './routers/User.js';
 import RoleRouter from './routers/Role.js';
+import TinhThanhRouter from './routers/TinhThanh.js';
+import ThanhPhoRouter from './routers/ThanhPho.js';
 
 // cấu hình website:
 const app = express();
@@ -40,6 +42,8 @@ app.use(express.json());
 app.use('/Home',HomeRouter); // localhost:8080 || 3001/Home/..
 app.use('/User',userRouter); // localhost:8080 || 3001/User/..
 app.use('/Role',RoleRouter);// localhost:8080 || 3001/ChucVu/..
+app.use('/TinhThanh',TinhThanhRouter);// localhost:8080 || 3001/ChucVu/..
+app.use('/ThanhPho',ThanhPhoRouter);// localhost:8080 || 3001/ChucVu/..
 
 // connect DB
 mongoose.connect(URL_DB,{useNewUrlParser: true, useUnifiedTopology: true})

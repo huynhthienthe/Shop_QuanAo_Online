@@ -20,7 +20,7 @@ import Checkout       from "../pages/Checkout";
 import Donhang        from "../pages/Donhang";
 import Lichsu         from "../pages/Lichsu";
 
-//import Caidat       from "../pages/Caidat";
+import GetEditByUser       from "../pages/Caidat";
 // import Tintuc      from "../pages/Tintuc";
 // import Yeuthich    from "../pages/Yeuthich";
 // import Lienhe      from "../pages/Lienhe";
@@ -40,7 +40,8 @@ const Routers = () => {
       <Route path="/adidas"              element={<Adidas />} />
       <Route path="/cart"                element={<Cart />} />
       <Route path="/aoa"                 element={<AoA />} />
-      <Route path="/Home/logout" />
+      <Route path="/User/Caidat/:id"     element={<GetEditByUser />} />
+      <Route path="/User/DiaChi"     element={<GetEditByUser />} />
       <Route
         path="/detailproduct/:productId"
         element={<DetailProduct products={products} />}/>

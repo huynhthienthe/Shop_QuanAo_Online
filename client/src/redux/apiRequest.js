@@ -30,11 +30,101 @@ import {
   getRolesFailed,
 } from "./RoleSlice";
 
+import {
+  getAddressStart,
+  getAddressSuccess,
+  getAddressFailed,
+  createAddressStart,
+  createAddressSuccess,
+  createAddressFailed,
+  geteditAddressStart,
+  geteditAddressSuccess,
+  geteditAddressFailed,
+  deleteAddressStart,
+  deleteAddressSuccess,
+  deleteAddressFailed,
+} from "./addressSlice";
+
+import { 
+  getCityStart,
+  getCitySuccess,
+  getCityFailed,
+} from "./CitySlice";
+
+
 // localhost setting port:
 const axiosInstance = axios.create({
   baseURL: "http://[::1]:8080" || "http://[::1]:3000",
 });
 
+//
+export const getThanhPho = async (dispatch, accessToken) => {
+  dispatch(getCityStart());
+  try {
+    const res = await axiosInstance.get("/ThanhPho/DSThanhPho/", {
+      headers: { token: `Gacon ${accessToken}` },
+    });
+    dispatch(getCitySuccess(res.data));
+  } catch (err) {
+    dispatch(getCityFailed(err.response.data));
+  }
+};
+
+//
+export const deleteAddress = async (id, dispatch, token) => {
+  console.log("delete");
+  dispatch(deleteAddressStart());
+  try {
+    console.log(id);
+    const res = await axiosInstance.delete("/User/deleteDiaChi/" + id, {
+      headers: { token: `Gacon ${token}` },
+    });
+    dispatch(deleteAddressSuccess(res.data));
+  } catch (err) {
+    dispatch(deleteAddressFailed(err.response.data));
+  }
+};
+
+//
+export const updateAddress = async (dispatch, updated, id_address, id_user, accessToken) => {
+  dispatch(geteditAddressStart());
+  try {
+    const res = await axiosInstance.post(`/User/EditDiaChi/${id_address}`, updated, {
+      headers: { token: `Gacon ${accessToken}` }
+    });
+    dispatch(geteditAddressSuccess(res.data));
+    getAllAddresses(dispatch, id_user, accessToken);
+  } catch (err) {
+    dispatch(geteditAddressFailed(err.response.data));
+  }
+};
+
+//
+export const createNewAddress = async (dispatch, newAddress, accessToken) => {
+  dispatch(createAddressStart());
+  try {
+    const res = await axiosInstance.post("/User/DiaChi", newAddress);
+    dispatch(createAddressSuccess(res.data));
+    getAllAddresses(dispatch, newAddress.id_ND, accessToken);
+  } catch (err) {
+    dispatch(createAddressFailed());
+  }
+};
+
+//
+export const getAllAddresses = async (dispatch, id_User, accessToken) => {
+  dispatch(getAddressStart());
+  try {
+    const res = await axiosInstance.get(`/User/DSDiaChi/${id_User}`, {
+      headers: { token: `Gacon ${accessToken}` },
+    });
+    dispatch(getAddressSuccess(res.data));
+  } catch (err) {
+    dispatch(getAddressFailed(err.response.data));
+  }
+};
+
+//
 export const editUser = async (dispatch, edit, id_User, navigate, accessToken) => {
     dispatch(geteditUserStart());
     try {
@@ -47,6 +137,20 @@ export const editUser = async (dispatch, edit, id_User, navigate, accessToken) =
     } catch (err) {
       dispatch(geteditUserFailed(err.response.data));
     }
+};
+
+export const editByUser = async (dispatch, edit, id_User, navigate, accessToken) => {
+  dispatch(geteditUserStart());
+  try {
+    const res = await axiosInstance.post(`/User/Caidat/${id_User}`, edit, {
+      headers: { token: `Gacon ${accessToken}` }
+    });
+    dispatch(geteditUserSuccess(res.data));
+    getAllUser(accessToken, dispatch);
+    navigate("/User/DetailUser/" + id_User);
+  } catch (err) {
+    dispatch(geteditUserFailed(err.response.data));
+  }
 };
 
 export const logOut = async (dispatch, navigate, id, accessToken) => {

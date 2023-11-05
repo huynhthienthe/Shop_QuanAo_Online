@@ -7,3 +7,19 @@
 - logout
 
 -- ----------------- FullStack_MERN_V2.1 ----------------- --
+
+
+-- ----------------- FullStack_MERN_V2.1.5 ----------------- --
+
+>>> updata: 16:25 CH 31/10/2023
+
+- thêm/xóa/sửa user
+- logout
+
+-- cập nhật:
+
+- thêm/xóa/sửa địa chỉ >>> thành công nhưng chưa hoàn chỉnh. 
+
+- cập nhật trang trang caiđat.
+
+-- ----------------- FullStack_MERN_V2.1 ----------------- --

@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../styles/header.css";
 import { Profile } from "../../lib/curent-profile";
 
-import { logOut, getAllUser } from "../../redux/apiRequest";
+import { logOut } from "../../redux/apiRequest";
 import noble from "../../assets/images/noble.png";
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
 import CartDropdown from "../../assets/productdata/CartDropdown";
@@ -54,11 +54,16 @@ const Header = () => {
   const navigate = useNavigate();
 
   const menuRef = useRef();
+
+  // handle:
   const handleLogout = () => {
     console.log(">>> accessTokenL: ",accessToken);
     logOut(dispatch,navigate,id,accessToken);
   };
 
+  const handleCaiDat = () => {
+    navigate("/User/Caidat/" + id);
+  };
   // gacon: kim phụng code nhớ comment nha !
   const [isBrandDropdownOpen, setIsBrandDropdownOpen] = useState(false);
   const [showUserDropdown, setShowUserDropdown] = useState(false);
@@ -174,7 +179,7 @@ const Header = () => {
               <div className="user-dropdown">
                 <ul>
                   <li>
-                    <Link to="">Cài đặt tài khoản</Link>
+                    <Link to= {`user/caidat/${id}`} onClick={handleCaiDat} >Cài đặt tài khoản</Link>
                   </li>
                   <li>
                     <Link to="/yeuthich">Sản phẩm yêu thích</Link>

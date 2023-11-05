@@ -5,6 +5,10 @@ import Users_Reducer from "./UserSlice.js";
 import cartSlice from "../store/shopping-cart/cartSlice";
 import cartUiSlice from "../store/shopping-cart/cartUiSlice";
 import Roles_Reducer from "./RoleSlice.js";
+import address_Reducer from "./addressSlice";
+import City_Reducer from "./CitySlice.js";
+import Province_Reducer from "./ProvinceSlice.js";
+
 import {
   persistStore,
   persistReducer,
@@ -27,6 +31,9 @@ const rootReducer = combineReducers({
   user_status: User_Status_Reducer,
   users: Users_Reducer,
   roles: Roles_Reducer,
+  address: address_Reducer,
+  City: City_Reducer,
+  Province: Province_Reducer,
   cart: cartSlice.reducer,
   cartUi: cartUiSlice.reducer, 
 });

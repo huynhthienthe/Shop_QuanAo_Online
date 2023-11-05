@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector }   from "react-redux";
 import { useParams }                  from "react-router-dom";
 import { useNavigate }                from "react-router-dom";
-import { editUser }                   from "../redux/apiRequest.js"; 
+import { editUser,  getAllUser }      from "../redux/apiRequest.js"; 
 
 const GetEditUser = () => {
 
@@ -50,6 +50,7 @@ const GetEditUser = () => {
       };
       console.log("Dữ liệu được gửi đi:", edit);
         editUser(dispatch, edit, detailUser._id, navigate, user?.accessToken);
+        getAllUser (user?.accessToken, dispatch);
         navigate("/User/DetailUser/" + detailUser._id);
     }
   };

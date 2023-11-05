@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { Container, Row, Col, Form, FormGroup, Label, Input } from "reactstrap";
-import "../styles/checkout.css";
-import { resetCart } from "../store/shopping-cart/cartSlice";
+//import "../styles/checkout.css";
+//import { resetCart } from "../store/shopping-cart/cartSlice";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const [orderSummary, setOrderSummary] = useState({
@@ -33,7 +33,7 @@ const Checkout = () => {
     // Xử lý logic gửi form thành công
 
     // Dispatch action resetCart để đặt lại giỏ hàng
-    dispatch(resetCart());
+    //dispatch(resetCart());
     setIsOrderSubmitted(true); // Đánh dấu đơn hàng đã được gửi đi
   };
   const calculateShippingFee = (totalAmount) => {
